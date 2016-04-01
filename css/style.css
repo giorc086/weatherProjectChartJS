@@ -1,0 +1,48 @@
+#nav {
+	width: 600px;
+	margin: 0 auto;
+	list-style:none;
+	margin-bottom: 30px;
+
+}
+
+#nav li {
+	float: left;
+}
+
+#nav a{
+	font-family: 'Montserrat', sans-serif;
+	text-decoration: none;
+	text-transform: none;
+	text-align: center;
+	margin-left: 30px;
+	color: darkgray ;
+}
+
+#nav a:hover{
+	color:#9C27B0;
+}
+
+h1 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 50px;
+	color: #E91E63;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+h2 {
+	font-family: 'Karla', sans-serif;
+	color: #03A9F4;
+	text-align: left;
+	margin-left: 30px;
+}
+
+#altaJanSnow, #altaFebSnow {
+	margin-left: 30px;
+}
+
+#altaJanTemp, #altaFebTemp{
+	margin-left: 30px;
+}
+

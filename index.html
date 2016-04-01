@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8" />
+    <title>weatherHistoryChartJS</title>
+    <script src='Chart.min.js'></script>
+    <link rel='stylesheet' href='css/style.css'></link>
+</head>
+
+<body>
+    <header>
+        <h1>SNOW MATTERS</h1>
+        <ul id="nav">
+            <li><a href="#jump1">JANUARY</a></li>
+            <li><a href="#jump2">FEBRUARY</a></li>
+            <li><a href="#jump3">MARCH</a></li>
+            <li><a href="#jump4">APRIL</a></li>
+            <li><a href="#jump5">MAY</a></li>
+            <li><a href="#jump6">JUNE</a></li>
+        </ul>
+    </header>
+
+    <br>
+    <a name="jump1"><h2>January Snowfall in Alta (Inches)</h2>
+    <canvas id="altaJanSnow" width="560" height="280"></canvas>
+    
+    <h2>January Temperature in Alta (F)</h2>
+    <canvas id="altaJanTemp" width="560" height="280"></canvas>
+    
+    <a name="jump2"><h2>February Snowfall in Alta (Inches)</h2>
+    <canvas id="altaFebSnow" width="560" height="280"></canvas>
+
+    <h2>February Temperature in Alta (F)</h2>
+    <canvas id="altaFebTemp" width="560" height="280"></canvas>
+
+
+    <script>
+    //GLOBAL VARIABLES-SETTINGS
+    Chart.defaults.global.animationSteps = 50;
+    Chart.defaults.global.tooltipYPadding = 16;
+    Chart.defaults.global.tooltipCornerRadius = 0;
+    Chart.defaults.global.tooltipTitleFontStyle = "normal";
+    Chart.defaults.global.tooltipFillColor = "#03A9F4";
+    Chart.defaults.global.animationEasing = "easeOutBounce";
+    //Chart.defaults.global.responsive = true;
+    Chart.defaults.global.scaleLineColor = "black";
+    Chart.defaults.global.scaleFontSize = 16;
+    
+    //ALTA Jan SNOW
+    var altaJanSnowData = {
+        labels: ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"],
+        datasets: [{
+                label: "Snow Fall",
+                fillColor: "rgba(220,220,220,0.2)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: [97.4, 65, 69.5, 27, 58.5, 87.3, 135, 44, 152.7, 96.8, 92, 41.5, 61, 59.1, 50.6, 35]
+            }
+        ]
+    };
+
+    //ALTA Jan Temp
+    var altaJanTempData = {
+        labels: ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"],
+        datasets: [{
+            label: "Temperature",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [22, 22.2, 18.2, 27.2, 21.7, 26, 21.5, 19.5, 14.5, 23.5, 24.3, 22.1, 24.2, 19.8, 24.2, 28.8]
+        }]
+    };
+
+//ALTA Feb Snow
+ var altaFebSnowData = {
+        labels: ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"],
+        datasets: [{
+                label: "Snow Fall",
+                fillColor: "rgba(220,220,220,0.2)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: [100.5, 69, 38, 59.3, 109.5, 70, 63, 95, 99.5, 68.1, 50, 99.2, 54, 60, 65.8, 29]
+            }
+        ]
+    };
+
+   //ALTA Feb Temp
+    var altaFebTempData = {
+        labels: ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"],
+        datasets: [{
+            label: "Temperature",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [26.6, 22.5, 20.5, 19.5, 19.3, 24.2, 20.3, 22.7, 18.4, 23.2, 20.5, 17.9, 21.2, 18.8, 22.8, 29.6]
+        }]
+    };
+    var altaJanSnow = document.getElementById('altaJanSnow').getContext('2d');
+    new Chart(altaJanSnow).Line(altaJanSnowData);
+
+    var altaJanTemp = document.getElementById('altaJanTemp').getContext('2d');
+    new Chart(altaJanTemp).Line(altaJanTempData);
+
+    var altaFebSnow = document.getElementById('altaFebSnow').getContext('2d');
+    new Chart(altaFebSnow).Line(altaFebSnowData);
+
+    var altaFebTemp = document.getElementById('altaFebTemp').getContext('2d');
+    new Chart(altaFebTemp).Line(altaFebTempData);
+    
+    </script>
+</body>
+
+</html>
